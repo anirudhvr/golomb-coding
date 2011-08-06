@@ -1,0 +1,34 @@
+What
+====
+
+This directory contains a C implementation of Golomb encoding (and
+decoding): http://en.wikipedia.org/wiki/Golomb_coding
+
+The specific implementation is based on 'Compression and Coding
+Algorithms' by Alistair Moffat & Andrew Turping, Kluwer Academic
+Publishers, 2002. 
+
+Also included are run-length encoding/decoding functions (because Golomb
+coding works with positive integers), and a deflate (zip)
+encoding/decoding function lifted from zlib.
+
+
+How
+===
+
+The way to use the implementation is to take a character array you want
+to encode, run-length encode it, and then Golomb code it. To decode,
+apply Golomb decoding and then the run-length decoding.
+
+
+Performance
+===========
+
+Is pretty good. See "Compressing Bloom Filters" in Section 5.1 of this
+paper (this code was written to compress bloom filters for one of our
+projects).
+
+http://smartech.gatech.edu/bitstream/handle/1853/25467/GT-CS-08-02.pdf
+
+
+
